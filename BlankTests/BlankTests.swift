@@ -31,6 +31,21 @@ final class BlankTests: XCTestCase {
         XCTAssertEqual(result, 5, "The sum function did not return the expected result")
     }
 
+    func testVariable() throws {
+        var greeting = "Hello, playground"
+        greeting = "@@@@@"
+        print(greeting)
+        XCTAssertEqual(greeting.count, 5)
+        greeting = "abc"
+        XCTAssertEqual(greeting.uppercased(), "ABC")
+        let multiLine = """
+        A day in
+        the line of an
+        Apple engineer
+        """
+        XCTAssert(multiLine.hasPrefix("A day"))
+    }
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {

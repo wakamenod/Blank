@@ -28,7 +28,11 @@ swift build
 '''
 
 [tasks.test]
-dependencies = ["lint"]
 script = '''
 swift test 2>&1 | xcbeautify
+'''
+
+[tasks.test-verbose]
+script = '''
+swift test
 '''
